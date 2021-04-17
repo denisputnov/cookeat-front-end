@@ -1,0 +1,21 @@
+.CardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  gap: 1vw;
+  margin: 3vw 0;
+  padding: 0 1vw;
+}
+
+@media(max-width: 768px) {
+  .CardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 576px) {
+  .CardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

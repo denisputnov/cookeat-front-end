@@ -1,0 +1,36 @@
+
+
+.Head {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+  height: calc(100vw / 2.5);
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  border-bottom-right-radius: calc(100vw / 2.5 / 2 + 5vw) calc(100vw / 2.5 / 2);
+}
+
+.HeadImage {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.Exit {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  width: calc(2.4vw + 20px);
+  height: calc(2.4vw + 20px);
+  background-image: url("./exit.svg");
+  background-size: calc(2.4vw + 20px) calc(2.4vw + 20px);
+  transition-duration: 300ms;
+}
+
+.Exit:hover {
+  transform: scale(1.2);
+}

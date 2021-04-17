@@ -1,0 +1,14 @@
+.RecipieContent {
+  margin: 4vh auto 0;
+  max-width: 80vw;
+}
+
+.RecipieTitle {
+  margin: 0;
+  font-size: calc(30px + 3vw);
+}
+
+.CookTime {
+  margin: 1vh 0;
+  font-size: calc(20px + 2vw);
+}

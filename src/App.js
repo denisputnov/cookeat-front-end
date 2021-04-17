@@ -4,7 +4,7 @@ import MainPage from './components/mainPage/MainPage';
 import RecipiePage from './components/recipiePage/RecipiePage';
 
 class App extends Component {
-  return() {
+  render() {
     return (
       <BrowserRouter>
         <Switch>
