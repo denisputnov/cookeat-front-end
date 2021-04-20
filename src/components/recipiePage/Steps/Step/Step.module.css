@@ -1,0 +1,22 @@
+.Step {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5vh;
+}
+
+.Step:last-child {
+  margin-bottom: 0;
+}
+
+.StepText {
+  margin: 0;
+  font-size: calc(14px + 2vw);
+}
+
+.StepIndex {
+  font-size: calc(20px + 5vw);
+  font-weight: bold;
+  margin: 0;
+  margin-right: 4vw;
+  transform: translateY(calc((2.5vw) * -1));
+}

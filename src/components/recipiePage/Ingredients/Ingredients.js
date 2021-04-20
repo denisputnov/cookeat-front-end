@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Ingredient from './Ingredient/Ingredient';
+import classes from './Ingredients.module.css'
 
 const Ingredients = ({ ingredients }) => {
-
-  console.log(ingredients);
   return (
-   <Fragment>
+   <div className={classes.IngredientsWrapper}>
       { ingredients.map(ingredient => ( 
         <Ingredient 
           key={`${ingredient.name}-${ingredient.quantity}`} 
@@ -13,7 +12,7 @@ const Ingredients = ({ ingredients }) => {
           quantity={ingredient.quantity} 
         />
       )) }
-   </Fragment>
+   </div>
   )
 }
 

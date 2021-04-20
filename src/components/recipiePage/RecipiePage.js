@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Head from './Head/Head'
 import Ingredients from './Ingredients/Ingredients'
 import classes from './RecipiePage.module.css'
+import Steps from './Steps/Steps'
 
 class RecipiePage extends React.Component {
   state = {
@@ -405,16 +406,15 @@ class RecipiePage extends React.Component {
     this.setState({
       category, images, ingredients, nutrition, steps, summary, title, loading: false
     })
-
   }
 
   render() {
-    if (this.state.loading) return <div />
+    if (this.state.loading) return ( <div /> )
 
     const { category, images, ingredients, nutrition, steps, summary, title } = this.state
 
     const totalTime = summary.filter(item => item.name === 'total')[0]['quantity']
-    console.log(ingredients);
+    console.log(steps);
 
     return (
       <Fragment>
@@ -423,6 +423,8 @@ class RecipiePage extends React.Component {
           <h2 className={classes.RecipieTitle}>{title}</h2>
           <h5 className={classes.CookTime}>{totalTime} минут</h5>
           <Ingredients ingredients={ingredients}/>
+
+          <Steps steps={steps} />
         </div>
       </Fragment>
     )
