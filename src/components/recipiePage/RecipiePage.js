@@ -414,6 +414,7 @@ class RecipiePage extends React.Component {
     const { category, images, ingredients, nutrition, steps, summary, title } = this.state
 
     const totalTime = summary.filter(item => item.name === 'total')[0]['quantity']
+    console.log(ingredients);
 
     return (
       <Fragment>

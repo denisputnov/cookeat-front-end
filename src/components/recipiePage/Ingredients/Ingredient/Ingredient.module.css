@@ -1,0 +1,18 @@
+.Ingredient {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Ingredient:nth-child(2n) {
+  background-color: #C4C4C420;
+}
+
+.Ingredient p {
+  margin: 0.5vh 0;  
+  font-size: calc(16px + 1vw);
+}
+
+.Ingredient p:last-child {
+  margin-left: 20px;
+}
