@@ -14,10 +14,15 @@
   border-bottom-right-radius: calc(100vw / 2.5 / 2 + 5vw) calc(100vw / 2.5 / 2);
 }
 
+.Head:hover .HeadImage {
+  transform: scale(0.98);
+}
+
 .HeadImage {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 102.5%;
+  min-height: 102.5%;
   object-fit: cover;
+  transition-duration: 300ms;
 }
 
 .Exit {
@@ -29,6 +34,7 @@
   background-image: url("./exit.svg");
   background-size: calc(2.4vw + 20px) calc(2.4vw + 20px);
   transition-duration: 300ms;
+  z-index: 1000;
 }
 
 .Exit:hover {

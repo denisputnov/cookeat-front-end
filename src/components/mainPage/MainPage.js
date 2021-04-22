@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../hoc/Layout/Layout'
+import MainPageLayout from '../../hoc/MainPageLayout/MainPageLayout'
 import CardsGrid from './CardsGrid/CardsGrid'
 
 class MainPage extends React.Component {
@@ -3259,9 +3259,9 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <MainPageLayout>
         <CardsGrid recipies={this.state.recipies}/>
-      </Layout>
+      </MainPageLayout>
     )
   }
 }
