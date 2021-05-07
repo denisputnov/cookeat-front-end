@@ -1,0 +1,52 @@
+.Card {
+  width: calc((80vw / 3) - 20px);
+  box-sizing: border-box;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+  border-radius: calc(10px + 1vw);
+  transition: 0s;
+}
+
+.Avatar {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+
+.Name {
+  font-size: calc(12px + 1vw);
+  margin: 10px 0 20px;
+}
+
+.Skills {
+  padding-left: 20px;
+}
+
+.SkillItem {
+  font-size: 16px;
+}
+
+@media (max-width: 968px) {
+  .Card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .Card:nth-child(2) {
+    margin: 5vw 0;
+  }
+
+  .Name {
+    font-size: calc(16px + 5vw);
+  }
+
+  .Skills {
+    padding-left: 30px;
+  }
+
+  .SkillItem {
+    font-size: calc(16px + 2vw);
+  }
+}

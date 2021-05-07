@@ -1,0 +1,51 @@
+.Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5vh;
+  padding: 5vh 10vw;
+  width: 100%;
+  min-height: 300px;
+  background: linear-gradient(180deg, rgb(248, 248, 248) 0%, rgb(255, 255, 255) 100%);
+  box-sizing: border-box;
+}
+
+.FooterCeil {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(300px - 10vh);
+  padding-bottom: 16px;
+  /* width: calc((100vw - 20vw) / 3); */
+  width: 100%;
+}
+
+.CeilHeader {
+  font-size: calc(16px + 0.4vw);
+  margin: 0 0 16px;
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.CeilLink {
+  font-size: calc(14px + 0.4vw);
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.CeilLink:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.CeilLink:visited {
+  color: rgb(0, 0, 0, 0.3);
+}
+
+@media(max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+  }
+  .FooterCeil {
+    width: 100%;
+  }
+}

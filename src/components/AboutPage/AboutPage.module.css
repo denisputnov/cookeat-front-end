@@ -1,0 +1,21 @@
+.AboutPage {
+  margin: 0 auto;
+  max-width: 80vw;
+}
+
+.CardsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .AboutPage {
+    max-width: 90vw;
+  }
+  .CardsWrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+}

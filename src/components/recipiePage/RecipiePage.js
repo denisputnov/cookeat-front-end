@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Head from './Head/Head'
 import Ingredients from './Ingredients/Ingredients'
 import classes from './RecipiePage.module.css'
 import Steps from './Steps/Steps'
+import { motion } from 'framer-motion'
+import {animationConfig} from '../../animation/animationConfig'
 
 class RecipiePage extends React.Component {
   state = {
@@ -16,7 +18,19 @@ class RecipiePage extends React.Component {
     loading: true
   }
 
+  scrollUpAfterLoading = () => {
+    setTimeout(() => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }, 500)
+  }
+
   componentDidMount() {
+    this.scrollUpAfterLoading()
+
     const { id } = this.props.match.params
     console.log(id);
     const { category, images, ingredients, nutrition, steps, summary, title } = {
@@ -417,7 +431,7 @@ class RecipiePage extends React.Component {
     console.log(steps);
 
     return (
-      <Fragment>
+      <motion.div {...animationConfig}>
         <Head image={images[images.length - 1].slug} />
         <div className={classes.RecipieContent }>
           <h2 className={classes.RecipieTitle}>{title}</h2>
@@ -426,7 +440,7 @@ class RecipiePage extends React.Component {
 
           <Steps steps={steps} />
         </div>
-      </Fragment>
+      </motion.div>
     )
   }
 }

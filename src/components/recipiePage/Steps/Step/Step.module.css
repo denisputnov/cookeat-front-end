@@ -10,13 +10,13 @@
 
 .StepText {
   margin: 0;
-  font-size: calc(14px + 2vw);
+  font-size: calc(14px + 1.2vw);
 }
 
 .StepIndex {
-  font-size: calc(20px + 5vw);
+  font-size: calc(16px + 4vw);
   font-weight: bold;
   margin: 0;
   margin-right: 4vw;
-  transform: translateY(calc((2.5vw) * -1));
+  transform: translateY(calc((1.8vw) * -1));
 }

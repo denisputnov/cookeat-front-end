@@ -1,17 +1,35 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
+import Search from './Search/Search'
 
-const Layout = props => {
-  return (
-    <Fragment>
-      <Header />
+const MainPageLayout = props => {
 
-      { props.children }
+  const [isSearchOpened, setSearchOpened] = useState(false)
 
-     <Footer />
-    </Fragment>
-  )
+  const openSearch = () => {
+    setSearchOpened(true)
+    setTimeout(() => {
+      document.querySelector('#searchInput').focus()
+    }, 300)
+  }
+
+  const closeSearch = () => {
+    setSearchOpened(false)
+    document.querySelector('#searchInput').blur()
+  }
+
+    return (
+      <Fragment>
+        <Search opened={isSearchOpened} closeSearch={closeSearch} />
+        <Header openSearch={openSearch} />
+  
+        { props.children }
+  
+       <Footer />
+      </Fragment>
+    )
+
 }
 
-export default Layout
+export default MainPageLayout

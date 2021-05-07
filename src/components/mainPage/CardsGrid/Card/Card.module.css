@@ -5,7 +5,7 @@
   display: flex;
 
   width: 100%;
-  height: calc(100vw / 3.3);
+  height: calc((100vw - 20vw) / 3.3);
 
   justify-content: center;
   align-items: center;

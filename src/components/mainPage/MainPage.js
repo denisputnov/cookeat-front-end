@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MainPageLayout from '../../hoc/MainPageLayout/MainPageLayout'
 import CardsGrid from './CardsGrid/CardsGrid'
+import MobileAppBanner from './MobileAppBanner/MobileAppBanner'
 
-class MainPage extends React.Component {
-  state = {
-    recipies: [],
-    loading: false,
-  }
+import { motion } from 'framer-motion'
+import { slideAnimationConfig } from '../../animation/animationConfig'
+import CookieLoading from '../CookieLoading/CookieLoading'
 
-  componentDidMount() {
-    // const recipies = [...Array(10).keys()]
-    //   .map(value => { return { id: value, title: `Title ${value + 1}`} })
+function MainPage() {
+  const [recipies, setRecipies] = useState([])
+  const [loading, setLoading] = useState(!recipies.length)
+  const [showLoading, setShowLoading] = useState(!recipies.length)
+
+
+  useEffect(() => {
+    document.body.style.overflowY = "hidden"
     
-    const recipies = [ {
+    const recipiesJSON = [ {
       "category": [
         {
           "id": 4.0,
@@ -3252,18 +3256,30 @@ class MainPage extends React.Component {
       ],
       "title": "Oven Baked Omelet"
     }]
-    this.setState({
-      recipies
-    })
-  }
 
-  render() {
-    return (
-      <MainPageLayout>
-        <CardsGrid recipies={this.state.recipies}/>
-      </MainPageLayout>
-    )
-  }
+    setTimeout(() => {
+      setRecipies(recipiesJSON)
+      setLoading(false)
+
+      setTimeout(() => {
+        setShowLoading(false)
+      }, 500)
+
+      document.body.removeAttribute('style')
+    }, 100)
+  }, [])
+
+  return (
+    <>
+      { showLoading && <CookieLoading show={loading} /> }
+      <motion.div {...slideAnimationConfig}>
+        <MainPageLayout>
+          <CardsGrid recipies={recipies}/>
+          <MobileAppBanner />
+        </MainPageLayout>
+      </motion.div>
+    </>
+  )
 }
 
 export default MainPage

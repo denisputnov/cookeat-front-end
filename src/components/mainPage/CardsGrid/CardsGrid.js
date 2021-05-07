@@ -3,7 +3,6 @@ import Card from './Card/Card'
 import classes from './CardsGrid.module.css'
 
 const CardsGrid = props => {
-  console.log(classes);
   return (
     <div className={classes.CardsGrid}>
       { props.recipies.map((recipie, listIndex) => <Card key={recipie.id} listIndex={listIndex} {...recipie} /> ) }

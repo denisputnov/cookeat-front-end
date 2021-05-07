@@ -5,7 +5,7 @@
   display: flex;
 
   width: 100%;
-  height: calc(100vw / 2.5);
+  height: calc(80vh);
 
   justify-content: center;
   align-items: center;
@@ -39,4 +39,10 @@
 
 .Exit:hover {
   transform: scale(1.2);
+}
+
+@media(max-width: 768px) {
+  .Head {
+    height: 60vh;
+  }
 }

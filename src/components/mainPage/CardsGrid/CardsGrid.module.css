@@ -3,14 +3,15 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-auto-flow: dense;
-  gap: 1vw;
-  margin: 3vw 0;
-  padding: 0 1vw;
+  gap: 1vh;
+  margin: 5vh 0;
+  padding: 0 10vw;
 }
 
 @media(max-width: 768px) {
   .CardsGrid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 1vh;
   }
 }
 

@@ -1,6 +1,6 @@
 .RecipieContent {
   margin: 4vh auto 0;
-  max-width: 80vw;
+  max-width: 70vw;
 }
 
 .RecipieTitle {
@@ -11,4 +11,10 @@
 .CookTime {
   margin: 1vh 0;
   font-size: calc(20px + 2vw);
+}
+
+@media(max-width: 1024px) {
+  .RecipieContent {
+    max-width: 90vw;
+  }
 }

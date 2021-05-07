@@ -1,0 +1,127 @@
+.Search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  opacity: 0;
+  background-color: rgba(255,255,255, .95);
+  transform: translateY(-100vh);
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+}
+
+.Search-active {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0);
+  transition: top, left, right, bottom 2s cubic-bezier(0.1, 0.8, 0.15, 1);
+  transition: transform, opacity 1s cubic-bezier(0.1, 0.8, 0.15, 1);
+  opacity: 1;
+}
+
+.Exit {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  width: calc(2.4vw + 20px);
+  height: calc(2.4vw + 20px);
+  background-image: url("./exit.svg");
+  background-size: calc(2.4vw + 20px) calc(2.4vw + 20px);
+  transition-duration: 300ms;
+  background-color: transparent;
+  border-radius: unset;
+  border: none;
+  z-index: 1000;
+}
+
+.Exit:hover {
+  transform: scale(1.2);
+}
+
+.SearchWrapper {
+  padding: 0 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Search-active .SearchWrapper {
+  margin: 35vh auto 0;
+}
+
+.Input {
+  height: 8vh;
+  width: 100%;
+  border-radius: 4vh;
+  font-size: calc(20px + 1vw);
+  padding: 0 65px 0 2vh;
+  color:rgba(0, 0, 0, 0.4);
+  border: 0.4vh solid rgba(0, 0, 0, .1);
+  z-index: 10000;
+  box-sizing: border-box;
+}
+
+.Input::placeholder {
+  color:rgba(0, 0, 0, 0.1);
+}
+
+.InputWrapper {
+  position: relative;
+}
+
+.Input:focus {
+  box-shadow: 0 1vh 20px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transform: scale(1.05);
+  padding-right: calc(50px + 2vw);
+}
+
+.SearchItem {
+  position: absolute;
+  top: calc((8vh - 5vh) / 2);
+  right: 20px;
+  width: 5vh;
+  height: 5vh;
+  background: url(./search.svg) no-repeat;
+  background-position: center;
+  background-size: 5vh 5vh;
+  opacity: 0.3;
+  z-index: 100000;
+}
+
+.Input:focus + .SearchItem {
+  right: 5px;
+}
+
+.Ingredients {
+  display: none;
+}
+
+.Search-active .Ingredients {
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap;
+  margin-top: 1vh;
+  gap: 1vh;
+}
+
+.RemoveExcretionButton {
+  margin-top: 3vh;
+  background-color: unset;
+  border: 1.5px solid #00000012;
+  max-width: 270px;
+  padding: 0.4vh 1vh;
+  align-self: flex-end;
+  border-radius: calc(16px + 2vw);
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.RemoveExcretionButton:hover {
+  transform: scale(1.05);
+}
+
