@@ -53,7 +53,7 @@
 }
 
 .Input {
-  height: 8vh;
+  height: calc(40px + 2vh);
   width: 100%;
   border-radius: 4vh;
   font-size: calc(20px + 1vw);
@@ -81,14 +81,15 @@
 
 .SearchItem {
   position: absolute;
-  top: calc((8vh - 5vh) / 2);
-  right: 20px;
-  width: 5vh;
-  height: 5vh;
+  top: 50%;
+  right: 10px;
+  width: calc(40px + 1vh);
+  height: calc(40px + 1vh);
   background: url(./search.svg) no-repeat;
   background-position: center;
-  background-size: 5vh 5vh;
+  background-size: calc(30px + 1vh) calc(30px + 1vh);
   opacity: 0.3;
+  transform: translateY(-50%);
   z-index: 100000;
 }
 

@@ -25,6 +25,7 @@ const Header = props => {
           headerRef.current.classList.remove(classes.HeaderHidden)
         } else {
           // if user is far away from top border 
+          // console.log(window.location.href);
           setTimeout(() => headerRef.current.classList.remove(classes.HeaderHidden), 300)
         }
       }
